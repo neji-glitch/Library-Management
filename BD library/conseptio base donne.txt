@@ -1,0 +1,23 @@
+Conception de la base de données Gestion de bibliotec avec le SGBD Mysql:
+
+create database library character set'utf8';
+
+/////****table abonne*****//////
+
+create table abonne(
+Idabonne int primary key,
+Nom varchar(100) not null,
+Prenom varchar(100) not null)
+
+///******table livre****//////
+
+create table livre(
+idlivre int primary key,
+titre varchar(90) not null,
+disponible varchar(10) not null,
+idabonnee int)
+
+
+alter table livre add constraint fk foreign key(Idabonne)
+references abonne(Idabonne);
+
